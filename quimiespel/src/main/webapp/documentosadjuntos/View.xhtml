@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DocumentosadjuntosViewDlg" widgetVar="DocumentosadjuntosViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewDocumentosadjuntosTitle}">
+            <h:form id="DocumentosadjuntosViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{documentosadjuntosController.selected != null}">
+                        <h:outputText value="#{bundle.ViewDocumentosadjuntosLabel_idDocumentoAdjunto}"/>
+                        <h:outputText value="#{documentosadjuntosController.selected.idDocumentoAdjunto}" title="#{bundle.ViewDocumentosadjuntosTitle_idDocumentoAdjunto}"/>
+                        <h:outputText value="#{bundle.ViewDocumentosadjuntosLabel_titulo}"/>
+                        <h:outputText value="#{documentosadjuntosController.selected.titulo}" title="#{bundle.ViewDocumentosadjuntosTitle_titulo}"/>
+                        <h:outputText value="#{bundle.ViewDocumentosadjuntosLabel_url}"/>
+                        <h:outputText value="#{documentosadjuntosController.selected.url}" title="#{bundle.ViewDocumentosadjuntosTitle_url}"/>
+                        <h:outputText value="#{bundle.ViewDocumentosadjuntosLabel_extencion}"/>
+                        <h:outputText value="#{documentosadjuntosController.selected.extencion}" title="#{bundle.ViewDocumentosadjuntosTitle_extencion}"/>
+                        <h:outputText value="#{bundle.ViewDocumentosadjuntosLabel_fileType}"/>
+                        <h:outputText value="#{documentosadjuntosController.selected.fileType}" title="#{bundle.ViewDocumentosadjuntosTitle_fileType}"/>
+                        <h:outputText value="#{bundle.ViewDocumentosadjuntosLabel_contenido}"/>
+                        <h:outputText value="#{documentosadjuntosController.selected.contenido}" title="#{bundle.ViewDocumentosadjuntosTitle_contenido}"/>
+                        <h:outputText value="#{bundle.ViewDocumentosadjuntosLabel_fechaCarga}"/>
+                        <h:outputText value="#{documentosadjuntosController.selected.fechaCarga}" title="#{bundle.ViewDocumentosadjuntosTitle_fechaCarga}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewDocumentosadjuntosLabel_idPadre}"/>
+                        <h:outputText value="#{documentosadjuntosController.selected.idPadre}" title="#{bundle.ViewDocumentosadjuntosTitle_idPadre}"/>
+                        <h:outputText value="#{bundle.ViewDocumentosadjuntosLabel_createdBy}"/>
+                        <h:outputText value="#{documentosadjuntosController.selected.createdBy}" title="#{bundle.ViewDocumentosadjuntosTitle_createdBy}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="DocumentosadjuntosViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

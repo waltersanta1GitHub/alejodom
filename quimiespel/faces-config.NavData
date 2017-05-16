@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="tipoformato/List.xhtml" x="2650" y="150" zoom="true"/>
+        <Node id="formatosdetalle/Create.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="empleados/Edit.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="estado/Create.xhtml" x="2400" y="300" zoom="true"/>
+        <Node id="tipoformato/Create.xhtml" x="1900" y="300" zoom="true"/>
+        <Node id="areas/Create.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="ciudades/Edit.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="cargos/Create.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="areas/List.xhtml" x="1150" y="1050" zoom="true"/>
+        <Node id="empleados/View.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="estado/View.xhtml" x="900" y="900" zoom="true"/>
+        <Node id="formatosencabezado/Create.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="index.html" x="650" y="150" zoom="true"/>
+        <Node id="estado/Edit.xhtml" x="150" y="1500" zoom="true"/>
+        <Node id="ciudades/View.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="ciudades/List.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="index.xhtml" x="1589" y="43" zoom="false"/>
+        <Node id="unidades/List.xhtml" x="2400" y="150" zoom="true"/>
+        <Node id="empleados/List.xhtml" x="650" y="1350" zoom="true"/>
+        <Node id="formatosencabezado/List.xhtml" x="1150" y="750" zoom="true"/>
+        <Node id="areas/View.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="tipodocumento/Edit.xhtml" x="400" y="1200" zoom="true"/>
+        <Node id="login.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="formatosdetalle/List.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="formatosencabezado/View.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="estadomaterial/View.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="cargos/Edit.xhtml" x="1650" y="450" zoom="true"/>
+        <Node id="formatosdetalle/View.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="estadomaterial/List.xhtml" x="1900" y="600" zoom="true"/>
+        <Node id="tipoformato/Edit.xhtml" x="1150" y="900" zoom="true"/>
+        <Node id="ciiu/Edit.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="documentosadjuntos/View.xhtml" x="650" y="1200" zoom="true"/>
+        <Node id="empleados/Create.xhtml" x="900" y="750" zoom="true"/>
+        <Node id="departamento/Create.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="estadomaterial/Edit.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="embalajes/Edit.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="formatosencabezado/Edit.xhtml" x="900" y="1200" zoom="true"/>
+        <Node id="embalajes/View.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="departamento/View.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="unidades/Create.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="tipodocumento/Create.xhtml" x="1650" y="750" zoom="true"/>
+        <Node id="departamento/Edit.xhtml" x="1900" y="450" zoom="true"/>
+        <Node id="template.xhtml" x="2150" y="300" zoom="true"/>
+        <Node id="embalajes/List.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="ciudades/Create.xhtml" x="650" y="1050" zoom="true"/>
+        <Node id="documentosadjuntos/List.xhtml" x="1650" y="600" zoom="true"/>
+        <Node id="documentosadjuntos/Edit.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="estadomaterial/Create.xhtml" x="1400" y="900" zoom="true"/>
+        <Node id="unidades/Edit.xhtml" x="400" y="1350" zoom="true"/>
+        <Node id="unidades/View.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="embalajes/Create.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="areas/Edit.xhtml" x="1400" y="750" zoom="true"/>
+        <Node id="formatosdetalle/Edit.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="tipodocumento/List.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="departamento/List.xhtml" x="1400" y="600" zoom="true"/>
+        <Node id="estado/List.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="tipodocumento/View.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="cargos/List.xhtml" x="400" y="1050" zoom="true"/>
+        <Node id="ciiu/List.xhtml" x="2150" y="150" zoom="true"/>
+        <Node id="documentosadjuntos/Create.xhtml" x="1150" y="600" zoom="true"/>
+        <Node id="cargos/View.xhtml" x="150" y="1350" zoom="true"/>
+        <Node id="ciiu/View.xhtml" x="900" y="1050" zoom="true"/>
+        <Node id="tipoformato/View.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="ciiu/Create.xhtml" x="2150" y="450" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

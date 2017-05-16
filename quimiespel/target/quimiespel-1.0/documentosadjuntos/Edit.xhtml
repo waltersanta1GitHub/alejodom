@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DocumentosadjuntosEditDlg" widgetVar="DocumentosadjuntosEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditDocumentosadjuntosTitle}">
+            <h:form id="DocumentosadjuntosEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{documentosadjuntosController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditDocumentosadjuntosLabel_idDocumentoAdjunto}" for="idDocumentoAdjunto" />
+                        <p:inputText id="idDocumentoAdjunto" value="#{documentosadjuntosController.selected.idDocumentoAdjunto}" title="#{bundle.EditDocumentosadjuntosTitle_idDocumentoAdjunto}" required="true" requiredMessage="#{bundle.EditDocumentosadjuntosRequiredMessage_idDocumentoAdjunto}"/>
+                        <p:outputLabel value="#{bundle.EditDocumentosadjuntosLabel_titulo}" for="titulo" />
+                        <p:inputTextarea rows="4" cols="30" id="titulo" value="#{documentosadjuntosController.selected.titulo}" title="#{bundle.EditDocumentosadjuntosTitle_titulo}" required="true" requiredMessage="#{bundle.EditDocumentosadjuntosRequiredMessage_titulo}"/>
+                        <p:outputLabel value="#{bundle.EditDocumentosadjuntosLabel_url}" for="url" />
+                        <p:inputTextarea rows="4" cols="30" id="url" value="#{documentosadjuntosController.selected.url}" title="#{bundle.EditDocumentosadjuntosTitle_url}" required="true" requiredMessage="#{bundle.EditDocumentosadjuntosRequiredMessage_url}"/>
+                        <p:outputLabel value="#{bundle.EditDocumentosadjuntosLabel_extencion}" for="extencion" />
+                        <p:inputText id="extencion" value="#{documentosadjuntosController.selected.extencion}" title="#{bundle.EditDocumentosadjuntosTitle_extencion}" required="true" requiredMessage="#{bundle.EditDocumentosadjuntosRequiredMessage_extencion}"/>
+                        <p:outputLabel value="#{bundle.EditDocumentosadjuntosLabel_fileType}" for="fileType" />
+                        <p:inputText id="fileType" value="#{documentosadjuntosController.selected.fileType}" title="#{bundle.EditDocumentosadjuntosTitle_fileType}" required="true" requiredMessage="#{bundle.EditDocumentosadjuntosRequiredMessage_fileType}"/>
+                        <p:outputLabel value="#{bundle.EditDocumentosadjuntosLabel_contenido}" for="contenido" />
+                        <p:inputTextarea rows="4" cols="30" id="contenido" value="#{documentosadjuntosController.selected.contenido}" title="#{bundle.EditDocumentosadjuntosTitle_contenido}" />
+                        <p:outputLabel value="#{bundle.EditDocumentosadjuntosLabel_fechaCarga}" for="fechaCarga" />
+                        <p:calendar id="fechaCarga" pattern="MM/dd/yyyy" value="#{documentosadjuntosController.selected.fechaCarga}" title="#{bundle.EditDocumentosadjuntosTitle_fechaCarga}" required="true" requiredMessage="#{bundle.EditDocumentosadjuntosRequiredMessage_fechaCarga}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditDocumentosadjuntosLabel_idPadre}" for="idPadre" />
+                        <p:inputText id="idPadre" value="#{documentosadjuntosController.selected.idPadre}" title="#{bundle.EditDocumentosadjuntosTitle_idPadre}" required="true" requiredMessage="#{bundle.EditDocumentosadjuntosRequiredMessage_idPadre}"/>
+                        <p:outputLabel value="#{bundle.EditDocumentosadjuntosLabel_createdBy}" for="createdBy" />
+                        <p:inputText id="createdBy" value="#{documentosadjuntosController.selected.createdBy}" title="#{bundle.EditDocumentosadjuntosTitle_createdBy}" required="true" requiredMessage="#{bundle.EditDocumentosadjuntosRequiredMessage_createdBy}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{documentosadjuntosController.update}" value="#{bundle.Save}" update="display,:DocumentosadjuntosListForm:datalist,:growl" oncomplete="handleSubmit(args, 'DocumentosadjuntosEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DocumentosadjuntosEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
