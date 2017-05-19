@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListFormatosencabezadoTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="MaestrodetalleListForm">
+                <p:growl id="glowtwo" showDetail="true"/>
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{maestrodetalleController.formatoEncabezadoSelected != null}">
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_razonSocial}" for="razonSocial" />
+                        <p:inputText id="razonSocial" value="#{maestrodetalleController.formatoEncabezadoSelected.razonSocial}" title="#{bundle.CreateFormatosencabezadoTitle_razonSocial}" required="true" requiredMessage="#{bundle.CreateFormatosencabezadoRequiredMessage_razonSocial}"/>
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_ciiu}" for="ciiu" />
+                        <p:selectOneMenu id="ciiu" value="#{maestrodetalleController.formatoEncabezadoSelected.ciiu}" required="true" requiredMessage="#{bundle.EditFormatosencabezadoRequiredMessage_ciiu}">
+                            <f:selectItems value="#{ciiuController.itemsAvailableSelectOne}"
+                                           var="ciiuItem"
+                                           itemValue="#{ciiuItem}"
+                                           itemLabel="#{ciiuItem.codigo}-#{ciiuItem.descripcion}"
+                                           />
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_nit}" for="nit" />
+                        <p:inputText id="nit" value="#{fmaestrodetalleController.formatoEncabezadoSelected.nit}" title="#{bundle.CreateFormatosencabezadoTitle_nit}" required="true" requiredMessage="#{bundle.CreateFormatosencabezadoRequiredMessage_nit}"/>
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_telefono}" for="telefono" />
+                        <p:inputText id="telefono" value="#{maestrodetalleController.formatoEncabezadoSelected.telefono}" title="#{bundle.CreateFormatosencabezadoTitle_telefono}" />
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_direccion}" for="direccion" />
+                        <p:inputText id="direccion" value="#{maestrodetalleController.formatoEncabezadoSelected.direccion}" title="#{bundle.CreateFormatosencabezadoTitle_direccion}" required="true" requiredMessage="#{bundle.CreateFormatosencabezadoRequiredMessage_direccion}"/>
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_nombreContacto}" for="nombreContacto" />
+                        <p:inputText id="nombreContacto" value="#{maestrodetalleController.formatoEncabezadoSelected.nombreContacto}" title="#{bundle.CreateFormatosencabezadoTitle_nombreContacto}" required="true" requiredMessage="#{bundle.CreateFormatosencabezadoRequiredMessage_nombreContacto}"/>
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_telefonoContacto}" for="telefonoContacto" />
+                        <p:inputText id="telefonoContacto" value="#{maestrodetalleController.formatoEncabezadoSelected.telefonoContacto}" title="#{bundle.CreateFormatosencabezadoTitle_telefonoContacto}" required="true" requiredMessage="#{bundle.CreateFormatosencabezadoRequiredMessage_telefonoContacto}"/>
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{formatosencabezadoController.selected.email}" title="#{bundle.CreateFormatosencabezadoTitle_email}" />
+
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_empleados}" for="empleados" />
+                        <p:selectOneMenu id="empleados" value="#{maestrodetalleController.formatoEncabezadoSelected.empleados}" required="true" requiredMessage="#{bundle.EditFormatosencabezadoRequiredMessage_empleados}">
+                            <f:selectItems value="#{empleadosController.itemsAvailableSelectOne}"
+                                           var="empleadosItem"
+                                           itemValue="#{empleadosItem}"
+                                           itemLabel="#{empleadosItem.nombre},#{empleadosItem.apellido}"
+                                           />
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_estado}" for="estado" />
+                        <p:selectOneMenu id="estado" value="#{maestrodetalleController.formatoEncabezadoSelected.estado}" required="true" requiredMessage="#{bundle.EditFormatosencabezadoRequiredMessage_estado}">
+                            <f:selectItems value="#{estadoController.itemsAvailableSelectOne}"
+                                           var="estadoItem"
+                                           itemValue="#{estadoItem}"
+                                           itemLabel="#{estadoItem.nombre}"
+                                           />
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_tipoformato}" for="tipoformato" />
+                        <p:selectOneMenu id="tipoformato" value="#{maestrodetalleController.formatoEncabezadoSelected.tipoformato}" required="true" requiredMessage="#{bundle.EditFormatosencabezadoRequiredMessage_tipoformato}">
+                            <f:selectItems value="#{tipoformatoController.itemsAvailableSelectOne}"
+                                           var="tipoformatoItem"
+                                           itemValue="#{tipoformatoItem}"
+                                           itemLabel="#{tipoformatoItem.descripcion}"
+                                           />
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+
+                    <p:dataTable id="detalleuno" var="linea" value="#{maestrodetalleController.formatoDetalleItems}" editable="true" style="margin-bottom:20px">
+                        <f:facet name="header">
+                            Edicion de Linea
+                        </f:facet>
+
+                        <p:ajax event="rowEdit" listener="#{dtEditView.onRowEdit}" update=":MaestrodetalleListForm:glowtwo" />
+                        <p:ajax event="rowEditCancel" listener="#{dtEditView.onRowCancel}" update=":MaestrodetalleListForm:glowtwo" />
+
+                        <p:column headerText="Residuo">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{linea.nombreResiduo}" /></f:facet>
+                                <f:facet name="input"><p:inputText value="#{linea.nombreResiduo}" style="width:100%" label="Year"/></f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        
+                        <p:column headerText="Cantidad">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{linea.cantidad}" /></f:facet>
+                                <f:facet name="input"><p:inputText value="#{linea.cantidad}" style="width:100%" label="Year"/></f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <p:column headerText="Unidad">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{linea.unidades.descripcion}" /></f:facet>
+                                <f:facet name="input">
+                                    <h:selectOneMenu value="#{linea.unidades}" style="width:100%">
+                                        <f:selectItems value="#{unidadesController.items}" var="man" itemLabel="#{man}" itemValue="#{man}" />
+                                    </h:selectOneMenu>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        <p:column style="width:32px">
+                            <p:rowEditor />
+                        </p:column>
+                    </p:dataTable>
+
+
+                    <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_numVisita}" for="numVisita" />
+                    <p:inputText id="numVisita" value="#{maestrodetalleController.formatoEncabezadoSelected.numVisita}" title="#{bundle.CreateFormatosencabezadoTitle_numVisita}" required="true" requiredMessage="#{bundle.CreateFormatosencabezadoRequiredMessage_numVisita}"/>
+                    <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_fechaVisita}" for="fechaVisita" />
+                    <p:calendar id="fechaVisita" pattern="MM/dd/yyyy" value="#{maestrodetalleController.formatoEncabezadoSelected.fechaVisita}" title="#{bundle.EditFormatosencabezadoTitle_fechaVisita}" required="true" requiredMessage="#{bundle.EditFormatosencabezadoRequiredMessage_fechaVisita}" showOn="button"/>
+                    <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_horaVisita}" for="horaVisita" />
+                    <p:calendar id="horaVisita" pattern="HH:mm:ss" value="#{maestrodetalleController.formatoEncabezadoSelected.horaVisita}" title="#{bundle.EditFormatosencabezadoTitle_horaVisita}" required="true" requiredMessage="#{bundle.EditFormatosencabezadoRequiredMessage_horaVisita}" showOn="button"/>
+                    <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_especificacionSeguridad}" for="especificacionSeguridad" />
+                    <p:inputText id="especificacionSeguridad" value="#{maestrodetalleController.formatoEncabezadoSelected.especificacionSeguridad}" title="#{bundle.CreateFormatosencabezadoTitle_especificacionSeguridad}" />
+                    <p:outputLabel value="#{bundle.CreateFormatosencabezadoLabel_especificacionAdicional}" for="especificacionAdicional" />
+                    <p:inputText id="especificacionAdicional" value="#{maestrodetalleController.formatoEncabezadoSelected.especificacionAdicional}" title="#{bundle.CreateFormatosencabezadoTitle_especificacionAdicional}" />
+
+
+                    <p:commandButton actionListener="#{formatosencabezadoController.create}" value="#{bundle.Save}" update="display,:MaestrodetalleListForm:detalleuno,:growl" oncomplete="handleSubmit(args,'MaestrodetalleCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="MaestrodetalleCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>           
+        </ui:define>
+    </ui:composition>
+
+</html>
